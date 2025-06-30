@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS `partner_orders_db`;
+USE `partner_orders_db`;
+
+-- Drop table if it exists
+DROP TABLE IF EXISTS `cards`;
+
+-- Create `cards` table
+CREATE TABLE `cards` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `number` BIGINT DEFAULT NULL,            -- Use BIGINT for card numbers
+  `status` VARCHAR(45) DEFAULT NULL,
+  `isActive` BOOLEAN DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+-- Insert sample records into `cards`
+INSERT INTO `cards` (`id`, `number`, `status`, `isActive`) VALUES 
+  (1, 122222222222, 'INACTIVE', false),
+  (2, 133333333333, 'INACTIVE', false),
+  (3, 144444444444, 'INACTIVE', false),
+  (4, 155555555555, 'INACTIVE', false),
+  (5, 166666666666, 'INACTIVE', false);
